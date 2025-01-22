@@ -1,0 +1,71 @@
+package.json
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "proxy": "http://127.0.0.1:5000",
+    "dependencies": {
+    
+    ** add the "proxy" line
+
+
+routes.py 
+    @app.route('/')
+    @cross_origin(origin='http://localhost:3000')
+    def index():
+
+    ** add the @cross_origin tag to the views that send data to the frontend
+
+routes.py
+    from flask import jsonify
+    return jsonify(data)
+
+    ** import jsonify and return the data
+
+app.py
+    from flask import Flask, jsonify
+    from flask_cors import CORS
+
+    app = Flask(__name__)
+
+    # Restrict CORS to React frontend only
+    CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+
+    import routes
+
+    if __name__ == '__main__':
+        app.run(port=5000, debug=True)
+
+    ** import the CORS and add the CORS(origin)
+
+
+App.js
+    import React, { useEffect, useState } from 'react';
+    import axios from 'axios';
+
+
+    function App() {
+        const [data, setData] = useState(null);
+
+        useEffect(() => {
+        axios.get('http://127.0.0.1:5000') // Adjusted to Flask's actual port
+        .then(response => {
+            setData(response.data);
+        })
+        .catch(error => {
+            console.error('There was an error fetching the data!', error);
+        });
+
+        }, []);
+
+        return (
+        <div>
+            <h1>Sammy The Weather Swami</h1>
+            <p>{data ? data.geo.city : 'Loading...'}</p>
+            <p>{data ? data.geo.state : 'Loading...'}</p>
+            <p>{data ? data.geo.country : 'Loading...'}</p>
+        </div>
+        );
+    }
+
+    export default App;
+
