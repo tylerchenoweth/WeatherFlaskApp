@@ -17,12 +17,12 @@ function App() {
     }, []);
 
     return (
-        <div>
-          <h1>Sammy The Weather Swami</h1>
-          <p>{data ? data.geo.city : 'Loading...'}</p>
-          <p>{data ? data.geo.state : 'Loading...'}</p>
-          <p>{data ? data.geo.country : 'Loading...'}</p>
-        </div>
+      <div>
+        <h1>Sammy The Weather Swami</h1>
+        <p>{data ? data.geo.city : 'Loading...'}</p>
+        <p>{data ? data.geo.state : 'Loading...'}</p>
+        <p>{data ? data.geo.country : 'Loading...'}</p>
+      </div>
     );
 }
 
