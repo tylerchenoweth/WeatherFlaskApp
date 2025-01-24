@@ -1,14 +1,21 @@
 // src/components/Header.js
 import React from 'react';
-import './styles/Header.css'; // Import CSS file for styling (optional)
+import './styles/ForecastBox.css'; // Import CSS file for styling (optional)
 
 const CurrentWeatherBox = ({forecast}) => {
+
+  
+
+
+
+
+
   return (
-    <div>
-      <h2>{geo.city}, {geo.state}</h2>
-      <h2>{geo.country}</h2>
-      <h2><b>Temperature: </b>{now.temp} <span>&#8457;</span></h2>
-      <h2><b>Feels Like: </b>{now.feels_like} <span>&#8457;</span></h2>
+    <div className="box">
+      <h2>{forecast.day}</h2>
+      <p><b>Temperature: </b>{forecast.temp} <span>&#8457;</span></p>
+      <p><b>Feels Like: </b>{forecast.feels_like} <span>&#8457;</span></p>
+      <p><b>Humidity: </b>{forecast.humidity}</p>
     </div>
   );
 };
