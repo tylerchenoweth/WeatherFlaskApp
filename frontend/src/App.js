@@ -4,7 +4,9 @@ import axios from 'axios';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CurrentWeatherBox from './components/CurrentWeatherBox';
+import ForecastBox from './components/ForecastBox';
 
+import './App.css';
 
 function App() {
   const [data, setData] = useState(null);
@@ -27,10 +29,19 @@ function App() {
     return <div>Loading...</div>; // Render a loading state
   }
 
+
   return (
     <div>
       <Header />
       <CurrentWeatherBox geo={data.geo} now={data.now}/>
+
+      <div className="forecastBoxes">
+        {Object.entries(data.forecast).map(([key, value]) => (
+          <ForecastBox key={key} forecast={value} />
+        ))}
+      </div>
+      
+
       <Footer />
     </div>
   );
