@@ -1,3 +1,17 @@
+html, body {
+  color: #9A1E1E;
+  background-color: #D9D9D9;
+  
+  /* font-style: Georgia; */
+  /* 
+  #CCCCCC
+  #D9D9D9
+  #F2F2F2
+  #6E7E85
+  #B7CECE
+   */
+}
+
 
 .forecastBoxes {
   display: flex;
