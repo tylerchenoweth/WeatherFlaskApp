@@ -1,8 +1,13 @@
 .box {
-    border: 1px solid black;
-    width: 9rem;
-    margin: 1rem;
-    padding: 1rem;
+    width: 11rem; /* Set the width of the div */
+    border: 1px solid black; /* Add a border for visual clarity */
+    border-radius: 5px;
+    padding: 10px; /* Optional: Add padding inside the div */
+    overflow: hidden; /* Prevent text from overflowing outside */
+    text-overflow: ellipsis; /* Add "..." when text is truncated */
+    white-space: nowrap; /* Prevent text wrapping */
+
+    margin: .5rem;
 
     
 }
