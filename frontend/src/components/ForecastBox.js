@@ -4,11 +4,6 @@ import './styles/ForecastBox.css'; // Import CSS file for styling (optional)
 
 const CurrentWeatherBox = ({forecast}) => {
 
-  
-
-
-
-
 
   return (
     <div className="box">
@@ -16,6 +11,7 @@ const CurrentWeatherBox = ({forecast}) => {
       <p><b>Temperature: </b>{forecast.temp} <span>&#8457;</span></p>
       <p><b>Feels Like: </b>{forecast.feels_like} <span>&#8457;</span></p>
       <p><b>Humidity: </b>{forecast.humidity}%</p>
+      <img src={forecast.weather.icon}></img>
     </div>
   );
 };
