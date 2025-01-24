@@ -3,43 +3,38 @@ import axios from 'axios';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CurrentWeatherBox from './components/CurrentWeatherBox';
 
 
 function App() {
-    const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
 
-    useEffect(() => {
-      axios.get('http://127.0.0.1:5000') // Adjusted to Flask's actual port
-    .then(response => {
+  useEffect(() => {
+    axios.get('http://127.0.0.1:5000') // Flask backend URL
+      .then(response => {
         setData(response.data);
-    })
-    .catch(error => {
+      })
+      .catch(error => {
         console.error('There was an error fetching the data!', error);
-    });
+      });
+  }, []);
 
-    }, []);
+  
+  // This needs to be here because if the elements get rendered before
+  // the data is fetched youll just get a blank screen
+  if (data === null) {
+    console.log("Data is null. Loading...");
+    return <div>Loading...</div>; // Render a loading state
+  }
 
-    return (
-      <div>
-        <Header/>
-
-        <h2>{data.geo.city}, {data.geo.state}</h2>
-        <h2>{data.geo.country}</h2>
-        <h2><b>Temperature: </b>{data.now.temp} <span>&#8457;</span></h2>
-        <h2><b>Feels Like: </b>{data.now.feels_like} <span>&#8457;</span></h2>
-
-        <div>
-          <h1>Fruits:</h1>
-          <ul>
-            {data.forecast.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-
-        <Footer/>
-      </div>
-    );
+  return (
+    <div>
+      <Header />
+      <CurrentWeatherBox geo={data.geo} now={data.now}/>
+      <Footer />
+    </div>
+  );
 }
+
 
 export default App;
