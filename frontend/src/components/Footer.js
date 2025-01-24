@@ -5,7 +5,7 @@ import './styles/Footer.css'; // Import CSS file for styling (optional)
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>&copy; {new Date().getFullYear()} Tyler Chenoweth. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} CooperDuper. All rights reserved.</p>
     </footer>
   );
 };
