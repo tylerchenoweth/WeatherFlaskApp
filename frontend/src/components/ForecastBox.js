@@ -15,7 +15,7 @@ const CurrentWeatherBox = ({forecast}) => {
       <h2>{forecast.day}</h2>
       <p><b>Temperature: </b>{forecast.temp} <span>&#8457;</span></p>
       <p><b>Feels Like: </b>{forecast.feels_like} <span>&#8457;</span></p>
-      <p><b>Humidity: </b>{forecast.humidity}</p>
+      <p><b>Humidity: </b>{forecast.humidity}%</p>
     </div>
   );
 };
