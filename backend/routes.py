@@ -13,7 +13,7 @@ def kelvin_to_fahrenheit(kelvin):
     if kelvin < 0:
         raise ValueError("Temperature in Kelvin cannot be below absolute zero (0 K).")
 
-    fahrenheit = round( ((kelvin - 273.15) * 9/5 + 32), 2)
+    fahrenheit = round( ((kelvin - 273.15) * 9/5 + 32), 0)
     return fahrenheit
 
 
@@ -108,10 +108,10 @@ def index():
         forecast[num] = {
             "day": epoch_to_day_of_week(i['dt']),
             "datetime": epoch_to_datetime(i['dt']),
-            "temp": i['temp']['day'],
+            "temp": round(i['temp']['day'], 0),
             "feels_like": i['feels_like']['day'] ,
-            "max_temp": i['temp']['max'],
-            "min_temp": i['temp']['min'],
+            "max_temp": round(i['temp']['max'], 0),
+            "min_temp": round(i['temp']['min'], 0),
             "humidity": i['humidity'],
             "uvi": i["uvi"],
             "wind_direction": i['wind_deg'],
@@ -134,8 +134,8 @@ def index():
         "alerts": alerts,
         "lat": data['lat'],
         "long": data['lon'],
-        "temp": data['current']['temp'],
-        "feels_like": data['current']['feels_like'],
+        "temp": round(data['current']['temp'], 0),
+        "feels_like": round(data['current']['feels_like'], 0),
         "humidity": data['current']['humidity'],
         "uvi": data['current']["uvi"],
         "wind_direction": data['current']['wind_deg'],
