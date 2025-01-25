@@ -1,0 +1,10 @@
+/* CurrentWeatherBox.module.css */
+
+.currentWeatherMain {
+    text-align: center;
+}
+
+.currentWeatherMain h2 {
+    font-size: 4rem;
+}
+
