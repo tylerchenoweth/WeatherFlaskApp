@@ -17,3 +17,11 @@
     background-color: var(--bg-pop);
 
 }
+
+.box h2 {
+    font-size: 2rem;
+}
+
+.box p {
+    font-size: 1.25rem;
+}
