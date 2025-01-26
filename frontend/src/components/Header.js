@@ -38,7 +38,7 @@ const CrystalBallSvg = () => {
 const Header = () => {
   return (
     <header className="header">
-      <h1>Sammy the Weather Swami</h1>
+      <h1>Sammi, the Weather Swami</h1>
 
 
       <CrystalBallSvg />
