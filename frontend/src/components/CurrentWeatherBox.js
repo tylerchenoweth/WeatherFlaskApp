@@ -6,8 +6,13 @@ const CurrentWeatherBox = ({geo, now}) => {
   return (
     <div className="currentWeatherMain">
       <h2>{geo.city}, {geo.state} {geo.country}A! USA!</h2>
-      <h3><b>Temperature: </b>{now.temp} <span>&#8457;</span></h3>
-      <h3><b>Feels Like: </b>{now.feels_like} <span>&#8457;</span></h3>
+      <img src={now.weather.icon}></img>
+      <div className="tempsDiv">
+        <h3><b>Temperature: </b>{now.temp} <span>&#8457;</span></h3>
+        {/* <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p> */}
+        <h3><b>Feels Like: </b>{now.feels_like} <span>&#8457;</span></h3>
+      </div>
+      
     </div>
   );
 };

@@ -11,3 +11,12 @@
 .currentWeatherMain h3 {
     font-size: 2rem;
 }
+
+.currentWeatherMain .tempsDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.currentWeatherMain .tempsDiv h3:last-child{
+    margin-left: 6rem;
+}
