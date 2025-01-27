@@ -4,6 +4,13 @@
     text-align: center;
 }
 
+.currentWeatherMain img {
+    width: 12rem;
+    height: auto;
+    padding: -30rem;
+    margin: -3rem;
+}
+
 .currentWeatherMain h2 {
     font-size: 4rem;
 }
