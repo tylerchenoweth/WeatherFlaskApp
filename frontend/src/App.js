@@ -63,7 +63,7 @@ function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:5000') // Flask backend URL
+    axios.get('http://127.0.0.1:5001') // Flask backend URL
       .then(response => {
         setData(response.data);
       })
