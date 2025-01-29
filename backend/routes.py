@@ -124,7 +124,7 @@ def index():
             "day": epoch_to_day_of_week(i['dt']),
             "datetime": epoch_to_datetime(i['dt']),
             "temp": round(i['temp']['day'], 0),
-            "feels_like": i['feels_like']['day'] ,
+            "feels_like": round(i['feels_like']['day'], 0) ,
             "max_temp": round(i['temp']['max'], 0),
             "min_temp": round(i['temp']['min'], 0),
             "humidity": i['humidity'],
