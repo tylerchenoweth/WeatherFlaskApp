@@ -1,5 +1,6 @@
 .box {
     width: 11rem; /* Set the width of the div */
+    height: auto;
     border: 1px solid var(--text-main); 
     border-radius: 10px;
     padding: 10px; /* Optional: Add padding inside the div */
@@ -26,7 +27,14 @@
     font-size: 1.25rem;
 }
 
+.box:hover {
+  
+  /* width: calc(100% + 2rem);  */
+  /* min-height: calc(100% + 2rem);  */
 
+  transform: scale(1.2);
+  margin: 2rem;
+}
 
 
 
@@ -47,16 +55,25 @@
 
 /* The content in the box */
 .popup-content {
-  background: #fff;
+  background: #f2f0ef;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: left;
   color: black;
-  border: 2px solid var(--text-main); 
+  border: 2px solid var(--text-main);
+  
+  color: white;
+  background-color: var(--bg-pop);
+
+  font-size: 1.5rem;
+
+  
 }
 
-.popup-content h2 {
+.popup-content h1 {
   text-align: center;
+
+  
 }
 
 /* The "button" to open the box */
@@ -75,8 +92,16 @@
   cursor: pointer;
 }
 
+.popup-content table {
+  border-collapse: separate; /* Ensure spacing works */
+  border-spacing: 20px; /* Adjust space between columns */
+}
 
-  
+
+.popup-content .divider {
+  border-bottom: 2px solid black; /* Add line only for these rows */
+}
+
 
 
 
