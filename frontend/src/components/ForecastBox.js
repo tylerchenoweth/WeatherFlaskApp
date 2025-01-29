@@ -18,6 +18,7 @@ const ForecastBox = ({forecast}) => {
     }
   }
 
+  
 
 
 
@@ -57,14 +58,89 @@ const ForecastBox = ({forecast}) => {
     {isOpen && (
       <div className="popup" onClick={() => setIsOpen(false)}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-              <h2>More details...</h2>
-              <p><b>Description: </b>{forecast.datetime}</p>
+              <h1>{forecast.day}</h1>
+              <hr></hr>
+
+              {/* <p><b>Date Time: </b>{forecast.datetime}</p>
               <p><b>Description: </b>{forecast.weather.description}</p>
               <p><b>Will Feel Like: </b>{forecast.feels_like} <span>&#8457;</span></p>
               <p><b>Temperature: </b>{forecast.temp} <span>&#8457;</span></p>
               <p><b>Wind Direction: </b>{forecast.wind_direction} mph</p>
               <p><b>Wind Speed: </b>{forecast.wind_speed} mph</p>
               <p><b>Wind Gust: </b>{forecast.wind_gust} mph</p>
+
+              <p>---------------------------------------------------</p> */}
+
+              <table>
+                <tbody>
+                  <tr>
+                    <td><b>Date: </b></td>
+                    <td>
+                      {forecast.datetime.slice(8,11)}/
+                      {forecast.datetime.slice(5,7)}/    
+                      {forecast.datetime.slice(12,16)}
+                    </td>
+                  </tr>
+                  <tr className="divider">
+                    <td><b>Description: </b></td>
+                    <td>{forecast.weather.description}</td>
+                  </tr>
+
+                  <tr>
+                    <td><hr></hr></td>
+                    <td><hr></hr></td>
+                  </tr>
+
+                  <tr>
+                    <td><b>Will Feel Like: </b></td>
+                    <td>{forecast.feels_like} <span>&#8457;</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Temperature: </b></td>
+                    <td>{forecast.temp} <span>&#8457;</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>High: </b></td>
+                    <td>{forecast.max_temp} <span>&#8457;</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>Low: </b></td>
+                    <td>{forecast.min_temp} <span>&#8457;</span></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><hr></hr></td>
+                    <td><hr></hr></td>
+                  </tr>
+                  
+                  <tr>
+                    <td><b>Humidity: </b></td>
+                    <td>{forecast.humidity}%</td>
+                  </tr>
+
+                  <tr>
+                    <td><hr></hr></td>
+                    <td><hr></hr></td>
+                  </tr>
+
+                  <tr>
+                    <td><b>UVI Index: </b></td>
+                    <td>{forecast.uvi}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Wind Direction: </b></td>
+                    <td>{forecast.wind_direction} mph</td>
+                  </tr>
+                  <tr>
+                    <td><b>Wind Speed: </b></td>
+                    <td>{forecast.wind_speed} mph</td>
+                  </tr>
+                  <tr>
+                    <td><b>Wind Gust: </b></td>
+                    <td>{forecast.wind_gust} mph</td>
+                  </tr>
+                </tbody>
+              </table>
               {/* <div className="close-button" onClick={() => setIsOpen(false)}>Close</div> */}
           </div>
       </div>
