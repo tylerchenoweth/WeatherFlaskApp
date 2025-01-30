@@ -56,7 +56,7 @@
 /* The content in the box */
 .popup-content {
   background: #f2f0ef;
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 10px;
   text-align: left;
   color: black;
