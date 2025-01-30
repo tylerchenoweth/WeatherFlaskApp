@@ -84,6 +84,12 @@ const ForecastBox = ({forecast}) => {
                   <tr className="divider">
                     <td><b>Description: </b></td>
                     <td>{forecast.weather.description}</td>
+                    <td><b>Summary: </b></td>
+                    <td>{forecast.summary}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Summary: </b></td>
+                    <td>{forecast.summary}</td>
                   </tr>
 
                   <tr>
@@ -94,14 +100,20 @@ const ForecastBox = ({forecast}) => {
                   <tr>
                     <td><b>Will Feel Like: </b></td>
                     <td>{forecast.feels_like} <span>&#8457;</span></td>
+                    <td><b>Wind Direction: </b></td>
+                    <td>{forecast.wind_direction} degrees</td>
                   </tr>
                   <tr>
                     <td><b>Temperature: </b></td>
                     <td>{forecast.temp} <span>&#8457;</span></td>
+                    <td><b>Wind Speed: </b></td>
+                    <td>{forecast.wind_speed} mph</td>
                   </tr>
                   <tr>
                     <td><b>High: </b></td>
                     <td>{forecast.max_temp} <span>&#8457;</span></td>
+                    <td><b>Wind Gust: </b></td>
+                    <td>{forecast.wind_gust} mph</td>
                   </tr>
                   <tr>
                     <td><b>Low: </b></td>
@@ -116,18 +128,38 @@ const ForecastBox = ({forecast}) => {
                   <tr>
                     <td><b>Humidity: </b></td>
                     <td>{forecast.humidity}%</td>
+                    <td><b>Sunrise: </b></td>
+                    <td>{forecast.sunrise}</td>
                   </tr>
-
                   <tr>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
+                    <td><b>Dew Point: </b></td>
+                    <td>{forecast.dew_point}%</td>
+                    <td><b>Sunset: </b></td>
+                    <td>{forecast.sunset}</td>
                   </tr>
-
                   <tr>
+                    <td></td><td></td>
                     <td><b>UVI Index: </b></td>
                     <td>{forecast.uvi}</td>
                   </tr>
+
                   <tr>
+                    <td><hr></hr></td>
+                    <td><hr></hr></td>
+                  </tr>
+                  {/* <tr>
+                    <td><b>Sunrise: </b></td>
+                    <td>{forecast.sunrise}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Sunset: </b></td>
+                    <td>{forecast.sunset}</td>
+                  </tr>
+                  <tr>
+                    <td><b>UVI Index: </b></td>
+                    <td>{forecast.uvi}</td>
+                  </tr> */}
+                  {/* <tr>
                     <td><b>Wind Direction: </b></td>
                     <td>{forecast.wind_direction} mph</td>
                   </tr>
@@ -138,7 +170,7 @@ const ForecastBox = ({forecast}) => {
                   <tr>
                     <td><b>Wind Gust: </b></td>
                     <td>{forecast.wind_gust} mph</td>
-                  </tr>
+                  </tr> */}
                 </tbody>
               </table>
               {/* <div className="close-button" onClick={() => setIsOpen(false)}>Close</div> */}
