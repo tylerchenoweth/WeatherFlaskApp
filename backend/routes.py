@@ -7,6 +7,8 @@ import os, json
 from flask import jsonify
 from flask_cors import cross_origin
 
+
+
 def kelvin_to_fahrenheit(kelvin):
     kelvin = float(kelvin)
 
@@ -24,6 +26,8 @@ def epoch_to_day_of_week(epoch_time):
 def epoch_to_datetime(epoch_time):
     return datetime.fromtimestamp(epoch_time)
 
+def epoch_to_standard_time(epoch_time):
+    return datetime.fromtimestamp(epoch_time).strftime("%I:%M:%S %p")
 
 def getLatLongByCity(cityName, api_key):
     url = f"http://api.openweathermap.org/geo/1.0/direct?q={cityName}&appid={api_key}"
@@ -33,9 +37,7 @@ def getLatLongByCity(cityName, api_key):
     # Check if the city is in a state
     try:
         state = data[0]['state']
-        print("a;lskdjf;laskjdf")
     except:
-        print("NONEONEONEONEONOE")
         state = None
 
     geo = {
@@ -123,11 +125,15 @@ def index():
         forecast[num] = {
             "day": epoch_to_day_of_week(i['dt']),
             "datetime": epoch_to_datetime(i['dt']),
+            "summary": i['summary'],
             "temp": round(i['temp']['day'], 0),
-            "feels_like": round(i['feels_like']['day'], 0) ,
+            "feels_like": round(i['feels_like']['day'], 0),
             "max_temp": round(i['temp']['max'], 0),
             "min_temp": round(i['temp']['min'], 0),
             "humidity": i['humidity'],
+            "dew_point": i['dew_point'],
+            "sunrise": epoch_to_standard_time(i['sunrise']),
+            "sunset": epoch_to_standard_time(i['sunset']),
             "uvi": i["uvi"],
             "wind_direction": i['wind_deg'],
             "wind_speed": i['wind_speed'],
@@ -135,7 +141,8 @@ def index():
             "weather": {
                 "description": i['weather'][0]['description'],
                 "icon": icon_url[0] + i['weather'][0]['icon'] + icon_url[1]
-            }
+            },
+            "summary": i['summary']
         }  
 
     # Check if there are weather alerts
