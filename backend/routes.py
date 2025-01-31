@@ -83,7 +83,7 @@ def getSelectedForecastData(data):
 def getSelectedGeoData(data):
     # Check if the city is in a state
     try:
-        state = data[0]['state']
+        state = data['state']
     except:
         state = None
 
