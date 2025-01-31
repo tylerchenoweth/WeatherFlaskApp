@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import os, json
 from flask import jsonify
 from flask_cors import cross_origin
+import pytz
 
 # API urls
 # http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
@@ -34,8 +35,13 @@ def epoch_to_datetime(epoch_time):
     return datetime.fromtimestamp(epoch_time)
 
 
-def epoch_to_standard_time(epoch_time):
-    return datetime.fromtimestamp(epoch_time).strftime("%I:%M:%S %p")
+def epoch_to_standard_time(epoch_time, timezone=None):
+    if timezone is None:
+        timezone = 'US/Eastern'
+    tz = pytz.timezone(timezone)
+    utc_time = datetime.fromtimestamp(epoch_time, tz=pytz.utc)
+    local_time = utc_time.astimezone(tz)
+    return local_time.strftime("%I:%M:%S %p")
 
 
 def writeToFile(data, fileName):
@@ -202,6 +208,7 @@ def index():
         # Consolidate all data to one json file
         with open("offlineData.json", "w") as file:
             json.dump(all_data, file, indent=4) 
+
 
     # Holds data{}, forecast{}, now{} and gets returned
     context = {}
