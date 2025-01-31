@@ -1,0 +1,16 @@
+{
+    "name": "Tampa",
+    "local_names": {
+        "ru": "\u0422\u0430\u043c\u043f\u0430",
+        "uk": "\u0422\u0430\u043c\u043f\u0430",
+        "el": "\u03a4\u03ac\u03bc\u03c0\u03b1",
+        "en": "Tampa",
+        "oc": "Tampa",
+        "ar": "\u062a\u0627\u0645\u0628\u0627",
+        "he": "\u05d8\u05de\u05e4\u05d4"
+    },
+    "lat": 27.9477595,
+    "lon": -82.458444,
+    "country": "US",
+    "state": "Florida"
+}
