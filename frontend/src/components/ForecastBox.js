@@ -44,7 +44,7 @@ const ForecastBox = ({forecast}) => {
         {isToday ? <h2>Today</h2> : <h2>{forecast.day}</h2>}
         <img src={forecast.weather.icon}></img>
         
-        <p>{forecast.min_temp} <span>&#8457;</span> --- {forecast.max_temp} <span>&#8457;</span></p>
+        <p>{forecast.min_temp} <span>&#8457;</span> <span>&#126;</span> {forecast.max_temp} <span>&#8457;</span></p>
         
         <p><b>Humidity: </b>{forecast.humidity}%</p>
 
