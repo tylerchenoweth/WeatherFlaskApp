@@ -1,0 +1,231 @@
+
+
+.box {
+  width: 11rem; /* Set the width of the div */
+  height: auto;
+  border: 1px solid var(--text-main); 
+  border-radius: 10px;
+  padding: 10px; /* Optional: Add padding inside the div */
+  overflow: hidden; /* Prevent text from overflowing outside */
+  text-overflow: ellipsis; /* Add "..." when text is truncated */
+  white-space: nowrap; /* Prevent text wrapping */
+
+  margin: .5rem;
+
+  /* box-shadow: 10px 10px 5px gray; */
+
+  text-align: center;
+
+  color: white;
+  background-color: var(--bg-pop);
+
+}
+
+.box h2 {
+  font-size: 2rem;
+}
+
+.box p {
+  font-size: 1.25rem;
+}
+
+.box:hover {
+
+/* width: calc(100% + 2rem);  */
+/* min-height: calc(100% + 2rem);  */
+
+transform: scale(1.2);
+margin: 2rem;
+}
+
+
+
+/* Below is the classes for the pop box */
+
+.popup {
+display: flex;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+justify-content: center;
+align-items: center;
+}
+
+.popup-content {
+background: var(--bg-pop);
+color: white;
+border-radius: 10px;
+border: 2px solid var(--text-main);
+padding: 20px;
+max-width: 80%;
+max-height: 80%;
+overflow-y: auto; /* Scroll if content is too large */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+display: grid;
+/* gap: 20px; */
+width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+.top-container {
+display: grid;
+/* gap: 20px; */
+width: 100%;
+align-items: center;
+
+}
+
+
+
+/* Top section */
+.top-section {
+display: grid;
+justify-content: center; /* Centers the entire top section */
+width: 100%;
+
+
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  text-align: center; /* Ensures inline content is centered */
+
+}
+
+.top-content {
+/* display: flex; */
+flex-direction: column;
+align-items: flex-start; /* Left-align title & description */
+text-align: left;
+}
+
+.top-section-line {
+display: flex;
+align-items: right;
+}
+
+
+.something-line {
+justify-content: center;
+text-align: center;
+align-items: center;
+}
+
+
+.section-row {
+display: flex;
+justify-content: center;
+/* grid-template-columns: repeat(2, 1fr); */
+/* gap: 20px; */
+align-items: center;
+
+}
+
+.section {
+display: flex;
+flex-direction: column;
+width: 100%;
+}
+
+
+
+
+
+
+
+.line {
+display: flex;
+align-items: start; /* Ensures descriptions align at the top */
+
+justify-content: space-between;
+/* padding: 0 500px; */
+}
+
+.title {
+font-weight: bold;
+white-space: nowrap; /* Prevents wrapping */
+flex-shrink: 0; /* Prevents shrinking */
+/* min-width: 150px;  */
+text-align: left;
+
+justify-content: center;
+}
+
+.description {
+flex-grow: 1;
+text-align: left;
+}
+
+
+
+
+
+
+
+.row {
+display: flex;
+justify-content: flex-start; /* Left-align the elements in the row */
+gap: 10px; /* Optional: adds space between the elements */
+width: fit-content; /* Makes the row width adjust to the elements inside */
+}
+
+.element {
+padding: 10px;
+border: 1px solid black;
+text-align: left; /* Ensures text inside each element is left-aligned */
+min-width: 100px; /* Ensures elements have a minimum width (optional) */
+}
+
+
+
+
+
+
+
+
+.center {
+display: flex;
+/* justify-content: center; */
+text-align: left;
+}
+
+/* Close Button */
+.close-btn {
+background: red;
+color: white;
+border: none;
+padding: 8px 12px;
+font-size: 1rem;
+cursor: pointer;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+hr {
+width: 100%;  /* Ensures full width */
+border: none;
+height: 2px;  /* Increases visibility */
+background-color: #ccc; /* Light gray for visibility */
+margin: 20px 0; /* Adds spacing */
+}

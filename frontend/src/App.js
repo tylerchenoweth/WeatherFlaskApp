@@ -9,6 +9,9 @@ import ForecastBox from './components/ForecastBox';
 import './App.css';
 
 
+import TempBox from './components/TempBox';
+
+
 
 // This isnt used
 // Im just keeping it here for future reference or just in case
@@ -92,7 +95,9 @@ function App() {
         {Object.entries(data.forecast).map(([key, value]) => (
           <ForecastBox key={key} forecast={value} />
         ))}
+        <TempBox forecast={data.forecast[0]}/>
       </div>
+
 
       <br></br><br></br><br></br><br></br><br></br>
       <Footer />

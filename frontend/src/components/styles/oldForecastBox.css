@@ -1,0 +1,151 @@
+.box {
+    width: 11rem; /* Set the width of the div */
+    height: auto;
+    border: 1px solid var(--text-main); 
+    border-radius: 10px;
+    padding: 10px; /* Optional: Add padding inside the div */
+    overflow: hidden; /* Prevent text from overflowing outside */
+    text-overflow: ellipsis; /* Add "..." when text is truncated */
+    white-space: nowrap; /* Prevent text wrapping */
+
+    margin: .5rem;
+
+    /* box-shadow: 10px 10px 5px gray; */
+
+    text-align: center;
+
+    color: white;
+    background-color: var(--bg-pop);
+
+}
+
+.box h2 {
+    font-size: 2rem;
+}
+
+.box p {
+    font-size: 1.25rem;
+}
+
+.box:hover {
+  
+  /* width: calc(100% + 2rem);  */
+  /* min-height: calc(100% + 2rem);  */
+
+  transform: scale(1.2);
+  margin: 2rem;
+}
+
+
+
+/* Below is the classes for the pop box */
+
+/* The actual popup box */
+.popup {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+/* The content in the box */
+.popup-content {
+  background: #f2f0ef;
+  /* padding: 20px; */
+  border-radius: 10px;
+  text-align: left;
+  color: black;
+  border: 2px solid var(--text-main);
+  
+  color: white;
+  background-color: var(--bg-pop);
+
+  font-size: 1.5rem;
+
+  
+}
+
+.popup-content h1 {
+  text-align: center;
+
+  
+}
+
+/* The "button" to open the box */
+.open-button {
+  cursor: pointer;
+}
+
+/* Can be closed anywhere but has a button */
+.close-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.popup-content table {
+  border-collapse: separate; /* Ensure spacing works */
+  border-spacing: 20px; /* Adjust space between columns */
+}
+
+
+.popup-content .divider {
+  border-bottom: 2px solid black; /* Add line only for these rows */
+}
+
+
+
+.container {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.section-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.line {
+  display: flex;
+}
+
+.title {
+  font-weight: bold;
+  flex: 1;
+  min-width: 150px;
+}
+
+.description {
+  flex: 2;
+  padding-left: 20px;
+  min-width: 300px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

@@ -101,7 +101,7 @@ const TempBox = ({forecast}) => {
                         </div>
                         <div className="line">
                             <div className="title">Description: </div>
-                            <div className="description">{forecast.weather.description} </div>
+                            <div className="description">{forecast.weather.description} <span>&#8457;</span></div>
                         </div>
                         <div className="line">
                             <div className="title">Summary: </div>
