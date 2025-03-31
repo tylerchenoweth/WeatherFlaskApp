@@ -95,7 +95,10 @@ const ForecastBox = ({forecast}) => {
                   <tr>
                     <td><hr></hr></td>
                     <td><hr></hr></td>
+                    <td><hr></hr></td>
+                    <td><hr></hr></td>
                   </tr>
+                  
 
                   <tr>
                     <td><b>Will Feel Like: </b></td>
@@ -123,6 +126,8 @@ const ForecastBox = ({forecast}) => {
                   <tr>
                     <td><hr></hr></td>
                     <td><hr></hr></td>
+                    <td><hr></hr></td>
+                    <td><hr></hr></td>
                   </tr>
                   
                   <tr>
@@ -143,10 +148,12 @@ const ForecastBox = ({forecast}) => {
                     <td>{forecast.uvi}</td>
                   </tr>
 
-                  <tr>
+                  {/* <tr>
                     <td><hr></hr></td>
                     <td><hr></hr></td>
-                  </tr>
+                    <td><hr></hr></td>
+                    <td><hr></hr></td>
+                  </tr> */}
                   {/* <tr>
                     <td><b>Sunrise: </b></td>
                     <td>{forecast.sunrise}</td>
