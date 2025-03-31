@@ -1,0 +1,16 @@
+
+There are warnings when starting the project that they expected '===' instead of '=='
+Go through the code and fix these instances
+
+
+Add line separators for the popup box
+
+
+Comb through the code and format it properly
+
+
+Add instructions for how to run docker-compose without sudo 
+
+
+Merge into the main
+
