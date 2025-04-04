@@ -29,7 +29,6 @@ function App() {
     console.log("Data is null. Loading...");
     return <div>Loading...</div>; // Render a loading state
   }
-
  
 
   // main return
@@ -48,7 +47,6 @@ function App() {
       <Footer />
     </div>
   );
-
 }
 
 
