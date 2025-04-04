@@ -18,26 +18,18 @@ const ForecastBox = ({forecast}) => {
     }
   }
 
-  
-
-
 
   const [isVisible, setIsVisible] = useState(false);
+
   
-    const togglePopup = () => {
-      setIsVisible(!isVisible);
-    };
+  const togglePopup = () => {
+    setIsVisible(!isVisible);
+  };
 
-
-
-
-
-  return (
     
-
-
-
+  return (
   <>
+    {/* TODAY INFO */}
     <div className="open-button" onClick={() => setIsOpen(true)}>
       {/* This is the forecast box */}
       <div className="box" >
@@ -48,157 +40,129 @@ const ForecastBox = ({forecast}) => {
         
         <p><b>Humidity: </b>{forecast.humidity}%</p>
 
-        
-
       </div>
     </div>
 
 
-    {/* Below is the popup box */}
+    {/* POPUP BOX */}
     {isOpen && (
       <div className="popup" onClick={() => setIsOpen(false)}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-              <h1>{forecast.day}</h1>
-              <hr></hr>
+            <h1>{forecast.day}</h1>
+            <hr></hr>
 
-              {/* <p><b>Date Time: </b>{forecast.datetime}</p>
-              <p><b>Description: </b>{forecast.weather.description}</p>
-              <p><b>Will Feel Like: </b>{forecast.feels_like} <span>&#8457;</span></p>
-              <p><b>Temperature: </b>{forecast.temp} <span>&#8457;</span></p>
-              <p><b>Wind Direction: </b>{forecast.wind_direction} mph</p>
-              <p><b>Wind Speed: </b>{forecast.wind_speed} mph</p>
-              <p><b>Wind Gust: </b>{forecast.wind_gust} mph</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td><b>Date: </b></td>
+                  <td>
+                    {forecast.datetime.slice(8,11)}/
+                    {forecast.datetime.slice(5,7)}/    
+                    {forecast.datetime.slice(12,16)}
+                  </td>
+                </tr>
+                <tr className="divider">
+                  <td><b>Description: </b></td>
+                  <td>{forecast.weather.description}</td>
+                </tr>
+                <tr>
+                  <td><b>Summary: </b></td>
+                  <td>{forecast.summary}</td>
+                </tr>
 
-              <p>---------------------------------------------------</p> */}
+                <tr>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                </tr>
+                
 
-              <table>
-                <tbody>
-                  <tr>
-                    <td><b>Date: </b></td>
-                    <td>
-                      {forecast.datetime.slice(8,11)}/
-                      {forecast.datetime.slice(5,7)}/    
-                      {forecast.datetime.slice(12,16)}
-                    </td>
-                  </tr>
-                  <tr className="divider">
-                    <td><b>Description: </b></td>
-                    <td>{forecast.weather.description}</td>
-                    <td><b>Summary: </b></td>
-                    <td>{forecast.summary}</td>
-                  </tr>
-                  <tr>
-                    <td><b>Summary: </b></td>
-                    <td>{forecast.summary}</td>
-                  </tr>
+                <tr>
+                  <td><b>Will Feel Like: </b></td>
+                  <td>{forecast.feels_like} <span>&#8457;</span></td>
+                  <td><b>Wind Direction: </b></td>
+                  <td>{forecast.wind_direction} degrees</td>
+                </tr>
+                <tr>
+                  <td><b>Temperature: </b></td>
+                  <td>{forecast.temp} <span>&#8457;</span></td>
+                  <td><b>Wind Speed: </b></td>
+                  <td>{forecast.wind_speed} mph</td>
+                </tr>
+                <tr>
+                  <td><b>High: </b></td>
+                  <td>{forecast.max_temp} <span>&#8457;</span></td>
+                  <td><b>Wind Gust: </b></td>
+                  <td>{forecast.wind_gust} mph</td>
+                </tr>
+                <tr>
+                  <td><b>Low: </b></td>
+                  <td>{forecast.min_temp} <span>&#8457;</span></td>
+                </tr>
+                
+                <tr>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                </tr>
+                
+                <tr>
+                  <td><b>Humidity: </b></td>
+                  <td>{forecast.humidity}%</td>
+                  <td><b>Sunrise: </b></td>
+                  <td>{forecast.sunrise}</td>
+                </tr>
+                <tr>
+                  <td><b>Dew Point: </b></td>
+                  <td>{forecast.dew_point}%</td>
+                  <td><b>Sunset: </b></td>
+                  <td>{forecast.sunset}</td>
+                </tr>
+                <tr>
+                  <td></td><td></td>
+                  <td><b>UVI Index: </b></td>
+                  <td>{forecast.uvi}</td>
+                </tr>
 
-                  <tr>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                  </tr>
-                  
-
-                  <tr>
-                    <td><b>Will Feel Like: </b></td>
-                    <td>{forecast.feels_like} <span>&#8457;</span></td>
-                    <td><b>Wind Direction: </b></td>
-                    <td>{forecast.wind_direction} degrees</td>
-                  </tr>
-                  <tr>
-                    <td><b>Temperature: </b></td>
-                    <td>{forecast.temp} <span>&#8457;</span></td>
-                    <td><b>Wind Speed: </b></td>
-                    <td>{forecast.wind_speed} mph</td>
-                  </tr>
-                  <tr>
-                    <td><b>High: </b></td>
-                    <td>{forecast.max_temp} <span>&#8457;</span></td>
-                    <td><b>Wind Gust: </b></td>
-                    <td>{forecast.wind_gust} mph</td>
-                  </tr>
-                  <tr>
-                    <td><b>Low: </b></td>
-                    <td>{forecast.min_temp} <span>&#8457;</span></td>
-                  </tr>
-                  
-                  <tr>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Humidity: </b></td>
-                    <td>{forecast.humidity}%</td>
-                    <td><b>Sunrise: </b></td>
-                    <td>{forecast.sunrise}</td>
-                  </tr>
-                  <tr>
-                    <td><b>Dew Point: </b></td>
-                    <td>{forecast.dew_point}%</td>
-                    <td><b>Sunset: </b></td>
-                    <td>{forecast.sunset}</td>
-                  </tr>
-                  <tr>
-                    <td></td><td></td>
-                    <td><b>UVI Index: </b></td>
-                    <td>{forecast.uvi}</td>
-                  </tr>
-
-                  {/* <tr>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                    <td><hr></hr></td>
-                  </tr> */}
-                  {/* <tr>
-                    <td><b>Sunrise: </b></td>
-                    <td>{forecast.sunrise}</td>
-                  </tr>
-                  <tr>
-                    <td><b>Sunset: </b></td>
-                    <td>{forecast.sunset}</td>
-                  </tr>
-                  <tr>
-                    <td><b>UVI Index: </b></td>
-                    <td>{forecast.uvi}</td>
-                  </tr> */}
-                  {/* <tr>
-                    <td><b>Wind Direction: </b></td>
-                    <td>{forecast.wind_direction} mph</td>
-                  </tr>
-                  <tr>
-                    <td><b>Wind Speed: </b></td>
-                    <td>{forecast.wind_speed} mph</td>
-                  </tr>
-                  <tr>
-                    <td><b>Wind Gust: </b></td>
-                    <td>{forecast.wind_gust} mph</td>
-                  </tr> */}
-                </tbody>
-              </table>
-              {/* <div className="close-button" onClick={() => setIsOpen(false)}>Close</div> */}
+                {/* <tr>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                  <td><hr></hr></td>
+                </tr> */}
+                {/* <tr>
+                  <td><b>Sunrise: </b></td>
+                  <td>{forecast.sunrise}</td>
+                </tr>
+                <tr>
+                  <td><b>Sunset: </b></td>
+                  <td>{forecast.sunset}</td>
+                </tr>
+                <tr>
+                  <td><b>UVI Index: </b></td>
+                  <td>{forecast.uvi}</td>
+                </tr> */}
+                {/* <tr>
+                  <td><b>Wind Direction: </b></td>
+                  <td>{forecast.wind_direction} mph</td>
+                </tr>
+                <tr>
+                  <td><b>Wind Speed: </b></td>
+                  <td>{forecast.wind_speed} mph</td>
+                </tr>
+                <tr>
+                  <td><b>Wind Gust: </b></td>
+                  <td>{forecast.wind_gust} mph</td>
+                </tr> */}
+              </tbody>
+            </table>
+              
           </div>
       </div>
     )}
   </>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   );
 };
 

@@ -9,56 +9,6 @@ import ForecastBox from './components/ForecastBox';
 import './App.css';
 
 
-
-// This isnt used
-// Im just keeping it here for future reference or just in case
-function ColorFontCombinations() {
-  const combinations = [
-    { textColor: "#800000", backgroundColor: "#f5f5f5", font: "Arial" }, // Maroon on Light Gray
-    { textColor: "#800000", backgroundColor: "#a9a9a9", font: "Times New Roman" }, // Maroon on Dark Gray
-    { textColor: "#ff0000", backgroundColor: "#dcdcdc", font: "Helvetica" }, // Red on Light Gray
-    { textColor: "#ff6600", backgroundColor: "#696969", font: "Georgia" }, // Orange on Dark Gray
-    { textColor: "#800000", backgroundColor: "#dcdcdc", font: "Courier New" }, // Maroon on Light Gray
-    { textColor: "#ff6600", backgroundColor: "#808080", font: "Tahoma" }, // Orange on Dark Gray
-    { textColor: "#ff0000", backgroundColor: "#a9a9a9", font: "Verdana" }, // Red on Dark Gray
-    { textColor: "#800000", backgroundColor: "#e8e8e8", font: "Lucida Console" }, // Maroon on Light Gray
-    { textColor: "#ff6600", backgroundColor: "#b0b0b0", font: "Palatino Linotype" }, // Orange on Dark Gray
-    { textColor: "#ff0000", backgroundColor: "#808080", font: "Trebuchet MS" }, // Red on Dark Gray
-  ];
-
-  // Repeat combinations to make up to 50 boxes
-  while (combinations.length < 50) {
-    combinations.push(...combinations.slice(0, 10));
-  }
-  combinations.length = 50; // Ensure it is exactly 50
-
-  return (
-    <div className="color-grid">
-      {combinations.map((combo, index) => (
-        <div
-          key={index}
-          className="color-box"
-          style={{
-            backgroundColor: combo.backgroundColor,
-            color: combo.textColor,
-            fontFamily: combo.font,
-          }}
-        >
-          <p className="font-title">{combo.font}</p>
-          <p className="color-code">Text: {combo.textColor}</p>
-          <p className="color-code">Background: {combo.backgroundColor}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-
-
-
-
-
-
 function App() {
   const [data, setData] = useState(null);
 
